@@ -1,0 +1,21 @@
+html {
+  /* The browser default is 16px. By setting it to 15px, we make all 'rem' units slightly smaller. */
+  font-size: 15px; 
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+      Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #1a1a2e;
+  color: #e0e0e0;
+}
+
+main {
+  min-height: calc(100vh - 162px); 
+}

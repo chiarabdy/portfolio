@@ -11,9 +11,6 @@ const HeaderWrapper = styled.header`
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #2a2a4e;
-  position: sticky;
-  top: 0;
-  z-index: 10;
 `;
 
 const Logo = styled.div`
@@ -54,5 +51,5 @@ const Header = () => {
     </HeaderWrapper>
   );
 };
-    
+
 export default Header;
