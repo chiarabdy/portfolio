@@ -1,7 +1,18 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import Link from 'next/link';
 import { FaGithub } from 'react-icons/fa';
+import Confetti from 'react-confetti';
+
+const matrixChars = 'アァカサタナハマヤャラワガザダバパイキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン01'.split('');
+
+const drawMatrixChar = (ctx) => {
+  const char = matrixChars[Math.floor(Math.random() * matrixChars.length)];
+  ctx.font = '20px monospace';
+  ctx.fillStyle = '#00d1cd'; 
+  ctx.fillText(char, 0, 0);
+};
 
 const CardImage = styled.img`
   width: 100%;
@@ -11,14 +22,21 @@ const CardImage = styled.img`
 const Card = styled.div`
   background-color: #ffffff;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  position: relative; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 25px 0 rgba(135, 206, 235, 0.9);
+  }
 `;
     
 const CardContent = styled.div`
-  padding: 20px;
+  padding: 25px;
   display: flex;
   flex-direction: column;
   flex-grow: 1; 
@@ -35,11 +53,12 @@ const CardDescription = styled.p`
   font-size: 1rem;
   line-height: 1.6;
   flex-grow: 1;
+  margin-bottom: 20px;
 `;
     
 const TagContainer = styled.div`
   padding-top: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 `;
     
 const Tag = styled.span`
@@ -60,7 +79,7 @@ const LinkContainer = styled.div`
   margin-top: auto;
 `;
     
-const PrimaryButton = styled.a`
+const PrimaryButton = styled(Link)`
   text-decoration: none;
   background-color: #007bff;
   color: white;
@@ -87,9 +106,26 @@ const IconLink = styled.a`
 `;
     
 const ProjectCard = ({ project }) => {
-  const { title, description, image, tags, liveUrl, repoUrl } = project;
+  const [isHovered, setIsHovered] = useState(false);
+  const { id, title, description, image, tags, liveUrl, repoUrl } = project;
+  
   return (
-    <Card>
+    <Card 
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {isHovered && 
+        <Confetti 
+          width={320} 
+          height={500} 
+          numberOfPieces={80}
+          gravity={0.05}
+          recycle={false}
+          style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 3 }}
+          drawShape={drawMatrixChar}
+          colors={['#00d1cd', '#aaffaa', '#ffffff', '#87ceeb']}
+        />
+      }
       <CardImage src={image.src} alt={`${title} screenshot`} />
       <CardContent>
         <CardTitle>{title}</CardTitle>

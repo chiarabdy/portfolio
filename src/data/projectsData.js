@@ -10,7 +10,7 @@ export const projectsData = [
     image: kanbanImage,
     tags: ['React', 'Styled-Components', '@hello-pangea/dnd'],
     liveUrl: '/projects/kanban-tracker',
-    repoUrl: 'https://github.com/chiarabdy/kanban-task-app',
+    repoUrl: 'https://github.com/chiarabdy/portfolio/blob/main/src/components/Projects/KanbanApp.jsx',
   },
   {
     id: 'weather-dashboard',
@@ -19,7 +19,7 @@ export const projectsData = [
     image: weatherAppImage,
     tags: ['React', 'Vite', 'Axios', 'Styled-Components'],
     liveUrl: '/projects/weather-dashboard',
-    repoUrl: 'https://github.com/chiarabdy/react-weather-app',
+    repoUrl: 'https://github.com/chiarabdy/portfolio/blob/main/src/components/Projects/WeatherApp.jsx',
   },
   {
     id: 'brick-breaker',
@@ -28,6 +28,6 @@ export const projectsData = [
     image: brickBreakerImage,
     tags: ['JavaScript', 'HTML5 Canvas', 'CSS'],
     liveUrl: '/projects/brick-breaker',
-    repoUrl: 'https://github.com/chiarabdy/brick-breaker-game',
+    repoUrl: 'https://github.com/chiarabdy/portfolio/blob/main/src/components/Projects/BrickBreaker.jsx',
   },
 ];
