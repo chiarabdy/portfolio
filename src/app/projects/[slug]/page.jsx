@@ -1,8 +1,8 @@
 'use client';
 import React from 'react';
-import WeatherApp from '@/components/projects/WeatherApp';
-import KanbanApp from '@/components/projects/KanbanApp';
-import BrickBreaker from '@/components/projects/BrickBreaker';
+import WeatherApp from '@/components/Projects/WeatherApp';
+import KanbanApp from '@/components/Projects/KanbanApp';
+import BrickBreaker from '@/components/Projects/BrickBreaker';
 
 export default function ProjectPage({ params }) {
   const { slug } = params;
