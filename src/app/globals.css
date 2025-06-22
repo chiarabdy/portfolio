@@ -1,5 +1,4 @@
 html {
-  /* The browser default is 16px. By setting it to 15px, we make all 'rem' units slightly smaller. */
   font-size: 15px; 
 }
 

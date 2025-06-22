@@ -17,7 +17,7 @@ const About = () => {
         <ProfileImage src={profilePic.src} alt="Chiar Abdi" />
         <AboutText>
           <p>I'm a developer driven by a deep-seated passion for problem-solving and technology. My journey into tech was fueled by a love for logical challenges, which I first honed while earning my Bachelor's degree in English Literature from Damascus University.</p>
-          <p>That background gave me a unique perspective, blending analytical thinking with strong communication skills—essential for writing clear documentation and collaborating effectively. This path led me to incredible hands-on software engineering internships at <strong>Adobe</strong> and <strong>Archilogic</strong>, and a role as an IT Support Assistant at <strong>KUNIGO</strong>.</p>
+          <p>That background gave me a unique perspective, blending analytical thinking with strong communication skills—essential for writing clear documentation and collaborating effectively. This path led me to incredible hands-on software engineering internships at <strong>Adobe</strong> and <strong>Archilogic</strong>, and a role as an IT Support at <strong>KUNIGO</strong>.</p>
           <p>I am now eager to fully re-engage with my passion for software development and contribute my skills to building innovative and impactful applications.</p>
         </AboutText>
       </ContentWrapper>

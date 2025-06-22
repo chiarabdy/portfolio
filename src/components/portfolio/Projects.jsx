@@ -11,7 +11,7 @@ const ProjectsSection = styled.section`
 
 const SectionTitle = styled.h2`
   text-align: center;
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   color: #1a1a2e;
   margin-bottom: 50px;
 `;
@@ -20,12 +20,11 @@ const ProjectsGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 40px;
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
-  perspective: 1000px;
 `;
 
-const Projects = ({ onViewProject }) => {
+const Projects = () => {
   return (
     <ProjectsSection id="projects">
       <SectionTitle>My Work</SectionTitle>
@@ -34,7 +33,6 @@ const Projects = ({ onViewProject }) => {
           <ProjectCard 
             key={project.id} 
             project={project}
-            onViewProject={onViewProject} 
           />
         ))}
       </ProjectsGrid>

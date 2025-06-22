@@ -1,12 +1,13 @@
 'use client';
 import React from 'react';
 import styled from 'styled-components';
+import { FaGithub } from 'react-icons/fa';
 
 const CardImage = styled.img`
   width: 100%;
   display: block;
 `;
-
+    
 const Card = styled.div`
   background-color: #ffffff;
   border-radius: 10px;
@@ -14,13 +15,6 @@ const Card = styled.div`
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  transform-style: preserve-3d;
-
-  &:hover {
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
-    transform: rotateY(-10deg) rotateX(5deg) scale(1.05);
-  }
 `;
     
 const CardContent = styled.div`
@@ -61,35 +55,39 @@ const Tag = styled.span`
     
 const LinkContainer = styled.div`
   display: flex;
+  align-items: center;
   gap: 20px;
   margin-top: auto;
 `;
     
-const ActionButton = styled.button`
-  background: none;
-  border: none;
-  padding: 0;
+const PrimaryButton = styled.a`
   text-decoration: none;
-  color: #0079bf;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50px;
   font-weight: bold;
-  font-size: 1rem;
-  font-family: inherit;
-  cursor: pointer;
-  transition: color 0.3s ease;
-  &:hover { color: #00d1cd; }
+  transition: background-color 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+  }
 `;
 
-const ExternalLink = styled.a`
-  text-decoration: none;
-  color: #0079bf;
-  font-weight: bold;
-  font-size: 1rem;
-  transition: color 0.3s ease;
-  &:hover { color: #00d1cd; }
+const IconLink = styled.a`
+  color: #333;
+  font-size: 1.75rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    color: #007bff;
+    transform: translateY(-2px);
+  }
 `;
     
-const ProjectCard = ({ project, onViewProject }) => {
-  const { id, title, description, image, tags, repoUrl } = project;
+const ProjectCard = ({ project }) => {
+  const { title, description, image, tags, liveUrl, repoUrl } = project;
   return (
     <Card>
       <CardImage src={image.src} alt={`${title} screenshot`} />
@@ -98,12 +96,12 @@ const ProjectCard = ({ project, onViewProject }) => {
         <CardDescription>{description}</CardDescription>
         <TagContainer>{tags.map((tag) => (<Tag key={tag}>{tag}</Tag>))}</TagContainer>
         <LinkContainer>
-          <ActionButton onClick={() => onViewProject(id)}>
-            View Project
-          </ActionButton>
-          <ExternalLink href={repoUrl} target="_blank" rel="noopener noreferrer">
-            Source Code
-          </ExternalLink>
+          <PrimaryButton href={liveUrl} target="_blank" rel="noopener noreferrer">
+            Live Demo
+          </PrimaryButton>
+          <IconLink href={repoUrl} target="_blank" rel="noopener noreferrer" aria-label="GitHub Source Code">
+            <FaGithub />
+          </IconLink>
         </LinkContainer>
       </CardContent>
     </Card>
