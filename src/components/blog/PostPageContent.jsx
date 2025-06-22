@@ -1,5 +1,4 @@
 'use client';
-
 import styled from 'styled-components';
 
 const PostWrapper = styled.article`
@@ -37,18 +36,6 @@ const PostContent = styled.div`
     border-bottom: 1px solid #2a2a4e;
     padding-bottom: 5px;
     margin-top: 40px;
-  }
-
-  p, ul, ol, li {
-    color: #e0e0e0;
-    margin-bottom: 20px;
-  }
-
-  code {
-    background-color: #2a2a4e;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-family: 'Courier New', Courier, monospace;
   }
 `;
 
